@@ -1,0 +1,49 @@
+{
+  "models": [
+    {
+      "id": "m1",
+      "states": ["s0", "s1"],
+      "initials": ["s0"],
+      "transitions": [["s0", "s1"], ["s1", "s1"]],
+      "labels": {"s0": ["p"], "s1": ["p"]},
+      "formula": "G p",
+      "expected": "SAT"
+    },
+    {
+      "id": "m2",
+      "states": ["s0", "s1"],
+      "initials": ["s0"],
+      "transitions": [["s0", "s1"], ["s1", "s1"]],
+      "labels": {"s0": ["p"], "s1": []},
+      "formula": "G p",
+      "expected": "UNSAT"
+    },
+    {
+      "id": "m3",
+      "states": ["s0"],
+      "initials": ["s0"],
+      "transitions": [["s0", "s0"]],
+      "labels": {"s0": ["q"]},
+      "formula": "F q",
+      "expected": "SAT"
+    },
+    {
+      "id": "m4",
+      "states": ["a", "b"],
+      "initials": ["a"],
+      "transitions": [["a", "a"], ["a", "b"], ["b", "b"]],
+      "labels": {"a": [], "b": ["r"]},
+      "formula": "F r",
+      "expected": "UNSAT"
+    },
+    {
+      "id": "m5",
+      "states": ["a", "b"],
+      "initials": ["a"],
+      "transitions": [["a", "b"], ["b", "a"]],
+      "labels": {"a": ["p"], "b": []},
+      "formula": "G F p",
+      "expected": "SAT"
+    }
+  ]
+}
